@@ -368,8 +368,33 @@ mostOcurringLetter = String(key)
 }
 }
 print("Letter that occurs second most:\(secondLetter) this many times:\(secondBigNum)")
-```
 
+```
+```swift
+//another better way learned from ayoola and //adam
+var message = "Never trust a computer you can't throw out a window ~ Steve Wozniak"
+
+var list = [Character:Int]()
+var count = 0
+var alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+for letter in alphabet{
+for char in message{
+if char == letter{
+count += 1
+list.updateValue(count, forKey: char)
+}
+}
+count = 0
+}
+var test = list.values.sorted()
+var secondNum = test[test.count - 2]
+for (key,value) in list{
+if value == secondNum{
+print("The second most occuring letter: \(key)")
+}
+}
+```
 
 ## Closures
 
