@@ -542,3 +542,37 @@ enum FileStatus: CustomStringConvertible {
 Input: `[FileStatus.saved(numberOfVersions: 5), FileStatus.saved(numberOfVersions: 3), FileStatus.saved(numberOfVersions: 8)], 4`
 
 Output: `[File that has been saved 5 times, File that has been saved 8 times]`
+
+```swift
+//NOT FINISHED
+enum FileStatus: CustomStringConvertible {
+case unsaved
+case saved(numberOfVersions: Int)
+
+var description: String {
+switch self {
+case .unsaved:
+return "Unsaved File"
+case let .saved(numberOfVersions):
+return "File that has been saved \(numberOfVersions) times"
+}
+}
+func CheckSaves (){
+// make a comparison of ints coming in
+// compare savedmorethan with the instance numberofversions
+// we don't need unsaved case
+// when checking the saved case you can use the associated value numberofversions
+}
+}
+var things = [Any]()
+var savedMoreThan = FileStatus.saved(numberOfVersions: 4)
+// for loop check whether the saved files in stuff is greater than 4 or not
+var stuff = [FileStatus.saved(numberOfVersions: 5), FileStatus.saved(numberOfVersions: 3), FileStatus.saved(numberOfVersions: 8)]
+for i.numberOfVersions in stuff{
+things.append(i)
+if i > savedMoreThan{
+
+}
+}
+
+```
